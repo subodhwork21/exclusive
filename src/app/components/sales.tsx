@@ -51,7 +51,7 @@ const SalesSection = () => {
               </div>
               <div className="mt-4">
                 <Image
-                  src={"/icons/SemiClone.png"}
+                  src={"/icons/Semiclone.png"}
                   alt="semicolon"
                   width={4}
                   height={16}
@@ -66,7 +66,7 @@ const SalesSection = () => {
               <div className="mt-4">
                 {" "}
                 <Image
-                  src={"/icons/SemiClone.png"}
+                  src={"/icons/Semiclone.png"}
                   alt="semicolon"
                   width={4}
                   height={16}
@@ -82,7 +82,7 @@ const SalesSection = () => {
               <div className="mt-4">
                 {" "}
                 <Image
-                  src={"/icons/SemiClone.png"}
+                  src={"/icons/Semiclone.png"}
                   alt="semicolon"
                   width={4}
                   height={16}
