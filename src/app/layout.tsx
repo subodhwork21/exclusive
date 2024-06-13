@@ -6,22 +6,22 @@ import Footer from "./components/footer";
 import { createClient } from "@/utils/supabase/client";
 
 const poppinssemibold = localFont({
-  src: "./Poppins-SemiBold.ttf",
+  src: "./fonts/Poppins-SemiBold.ttf",
   variable: "--font-poppinssemibold",
 });
 
 const interbold = localFont({
-  src: "./Inter-VariableFont_slnt,wght.ttf",
+  src: "./fonts/Inter-VariableFont_slnt,wght.ttf",
   variable: "--font-interbold",
 });
 
 const poppinsregular = localFont({
-  src: "./Poppins-Regular.ttf",
+  src: "./fonts/Poppins-Regular.ttf",
   variable: "--font-poppinsregular",
 });
 
 const poppinsmedium = localFont({
-  src: "./Poppins-Medium.ttf",
+  src: "./fonts/Poppins-Medium.ttf",
   variable: "--font-poppinsmedium",
 });
 

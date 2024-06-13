@@ -10,14 +10,14 @@ import { convertSeconds } from "../lib/convertSeconds";
 const SalesSection = () => {
   const [seconds, setSeconds] = useState(345600);
   const [time1, setTime] = useState({
-    days: "",
-    hours: "",
-    min: "",
-    sec: "",
+    days: "4",
+    hours: "0",
+    min: "0",
+    sec: "0",
   });
 
   useEffect(() => {
-    setTimeout(() => {
+    const time = setTimeout(() => {
       const [days, hours, min, sec] = convertSeconds(seconds);
       setSeconds(seconds - 1);
       setTime({

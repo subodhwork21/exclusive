@@ -1,6 +1,12 @@
+"use client";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+
 const Footer = () => {
-  return (
+  const path = usePathname();
+  console.log(path);
+
+  return !path.includes("/studio") ? (
     <>
       <div className="max-w-[1440px] w-full mx-auto bg-blackprimary px-[135px] pt-[80px] flex justify-between items-start pb-[60px]">
         <div>
@@ -93,6 +99,8 @@ const Footer = () => {
         </p>
       </div>
     </>
+  ) : (
+    ""
   );
 };
 
