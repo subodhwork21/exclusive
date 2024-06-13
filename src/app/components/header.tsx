@@ -30,17 +30,15 @@ const Header = () => {
   const path = usePathname();
   const isLogin = useSelector((state: any) => state.login.logged);
   const [user, setUser] = useState<string | any>(null);
-  // console.log(isLogin, user);
+  console.log(isLogin, user);
   useEffect(() => {
     const getData = async () => {
       const supabase = createClient();
-      const { data, error } = await supabase.auth.getSession();
-      if (error || !data?.session) {
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data?.user) {
         setUser(null);
       } else {
-        setUser(
-          data.session.user != undefined ? data.session.user.email : null
-        );
+        setUser(data.user != undefined ? data.user.email : null);
       }
     };
     getData();

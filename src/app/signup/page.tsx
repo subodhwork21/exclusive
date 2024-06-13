@@ -1,12 +1,42 @@
+"use client";
 import Link from "next/link";
 import Image from "next/image";
 import Button from "../components/button";
 import { login, signup } from "../login/actions";
+import { getSignedup } from "./signup";
+import { useEffect, useReducer, useState } from "react";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+const Page = () => {
+  const router = useRouter();
+
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const changeData = (e: any) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const submitSignup = async (e: any) => {
+    e.preventDefault();
+    if (data.email && data.password) {
+      const error = await getSignedup(data);
+      if (!error) {
+        router.push("/login");
+      }
+    }
+  };
+
   return (
     <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col pr-[135px] pt-[60px] mb-[140px]">
-      <form className="flex justify-center items-center gap-[129px]">
+      <form
+        onSubmit={(e) => {
+          submitSignup(e);
+        }}
+        className="flex justify-center items-center gap-[129px]"
+      >
         <Image
           src={"/images/loginimage.png"}
           height={781}
@@ -28,16 +58,19 @@ const page = () => {
               name="email"
               type="email"
               placeholder="Email"
+              value={data.email}
+              onChange={(e) => changeData(e)}
               className="text-gray-400 border-b-[2px] py-[8px] pl-4 w-full mb-[40px]"
             />
             <input
               name="password"
               type="password"
               placeholder="Password"
+              value={data.password}
+              onChange={(e) => changeData(e)}
               className="text-gray-400 border-b-[2px] py-[8px] pl-4 w-full mb-[40px]"
             />
             <button
-              formAction={signup}
               className={`px-10 py-3 rounded-[4px] font-poppinsmedium
                     text-white bg-redsecondary
                  `}
@@ -69,4 +102,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -11,6 +11,7 @@ import { useSelector } from "../../redux/store";
 import { createClient } from "@/utils/supabase/client";
 import { makelogin } from "@/redux/reducers/loginSlice";
 import { useRouter } from "next/navigation";
+import { getLoggedOut } from "./logout";
 
 const Page = () => {
   const supabase = createClient();
@@ -19,14 +20,14 @@ const Page = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.login.logged);
   const [email, setEmail] = useState<any | string>(null);
-  const [loggedstate, setLoggedState] = useState(true);
   const logout = async (e: any) => {
     e.preventDefault();
-    const { error } = await supabase.auth.signOut();
-    console.log(error);
-    if (!error) dispatch(makelogin(false));
-    setLoggedState(false);
+    const error = await getLoggedOut();
+    if (!error) {
+      dispatch(makelogin(false));
+    }
   };
+
   useEffect(() => {
     async function getEmail() {
       const email = await getEmailServer();
@@ -39,13 +40,13 @@ const Page = () => {
   useEffect(() => {
     const getData = async () => {
       const supabase = createClient();
-      const { data, error } = await supabase.auth.getSession();
-      if (data?.session === null && !isLoggedIn) {
+      const { data, error } = await supabase.auth.getUser();
+      if (isLoggedIn === false) {
         router.push("/");
       }
     };
     getData();
-  }, [router, isLoggedIn, loggedstate]);
+  }, [router, isLoggedIn]);
   return (
     <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col px-[135px] mb-[140px]">
       <div className="flex justify-between items-start w-full mb-20">

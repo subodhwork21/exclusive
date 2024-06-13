@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import { useSelector } from "../../redux/store";
 
 import { useEffect, useState } from "react";
+import { getLoggedIn } from "./login";
 
 const Page = () => {
   const router = useRouter();
@@ -26,7 +27,7 @@ const Page = () => {
   const submitUser = async (e: any) => {
     e.preventDefault();
     if (data.email && data.password) {
-      const { error } = await supabase.auth.signInWithPassword(data);
+      const error = await getLoggedIn(data);
       if (!error) {
         dispatch(makelogin(true));
       }
