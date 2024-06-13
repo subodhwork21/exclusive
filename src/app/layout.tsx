@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import { createClient } from "@/utils/supabase/client";
+import { Providers } from "../redux/provider";
 
 const poppinssemibold = localFont({
   src: "./fonts/Poppins-SemiBold.ttf",
@@ -36,14 +37,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${poppinssemibold.variable}${poppinsregular.variable}${interbold.variable} ${poppinsmedium.variable} font-poppinsregular`}
-      >
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <Providers>
+      <html lang="en">
+        <body
+          className={`${poppinssemibold.variable}${poppinsregular.variable}${interbold.variable} ${poppinsmedium.variable} font-poppinsregular`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </Providers>
   );
 }

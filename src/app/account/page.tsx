@@ -6,9 +6,27 @@ import { useState, useEffect } from "react";
 import PrivatePage from "../private/page";
 import { getEmailServer } from "./email";
 import { logout } from "./actions";
+import { useDispatch } from "../../redux/store";
+import { useSelector } from "../../redux/store";
+import { createClient } from "@/utils/supabase/client";
+import { makelogin } from "@/redux/reducers/loginSlice";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
+  const supabase = createClient();
+  const router = useRouter();
+
+  const dispatch = useDispatch();
+  const isLoggedIn = useSelector((state) => state.login.logged);
   const [email, setEmail] = useState<any | string>(null);
+  const [loggedstate, setLoggedState] = useState(true);
+  const logout = async (e: any) => {
+    e.preventDefault();
+    const { error } = await supabase.auth.signOut();
+    console.log(error);
+    if (!error) dispatch(makelogin(false));
+    setLoggedState(false);
+  };
   useEffect(() => {
     async function getEmail() {
       const email = await getEmailServer();
@@ -17,6 +35,17 @@ const Page = () => {
     const email = getEmail();
     setEmail(email);
   }, []);
+
+  useEffect(() => {
+    const getData = async () => {
+      const supabase = createClient();
+      const { data, error } = await supabase.auth.getSession();
+      if (data?.session === null && !isLoggedIn) {
+        router.push("/");
+      }
+    };
+    getData();
+  }, [router, isLoggedIn, loggedstate]);
   return (
     <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col px-[135px] mb-[140px]">
       <div className="flex justify-between items-start w-full mb-20">
@@ -31,7 +60,11 @@ const Page = () => {
         </p>
         <div className="flex flex-col justify-end items-end">
           <p className="mb-4">{email}</p>
-          <form action={logout}>
+          <form
+            onSubmit={(e) => {
+              logout(e);
+            }}
+          >
             <Button name="Log Out" bgcolor="bg-redsecondary" />
           </form>
         </div>

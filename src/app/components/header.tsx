@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { getUser } from "../lib/getUser";
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
+import { useSelector } from "../../redux/store";
 
 const navigation = [
   {
@@ -27,7 +28,9 @@ const navigation = [
 ];
 const Header = () => {
   const path = usePathname();
+  const isLogin = useSelector((state: any) => state.login.logged);
   const [user, setUser] = useState<string | any>(null);
+  // console.log(isLogin, user);
   useEffect(() => {
     const getData = async () => {
       const supabase = createClient();
@@ -123,7 +126,7 @@ const Header = () => {
                   height={32}
                 ></Image>
               </Link>
-              {user && (
+              {(isLogin || user) && (
                 <Link href={"/account"}>
                   <Image
                     src={"/icons/user.png"}

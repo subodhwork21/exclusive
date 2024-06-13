@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 const Footer = () => {
   const path = usePathname();
-  console.log(path);
 
   return !path.includes("/studio") ? (
     <>
