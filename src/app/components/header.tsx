@@ -29,20 +29,21 @@ const navigation = [
 const Header = () => {
   const path = usePathname();
   const isLogin = useSelector((state: any) => state.login.logged);
-  const [user, setUser] = useState<string | any>(null);
-  console.log(isLogin, user);
-  useEffect(() => {
-    const getData = async () => {
-      const supabase = createClient();
-      const { data, error } = await supabase.auth.getUser();
-      if (error || !data?.user) {
-        setUser(null);
-      } else {
-        setUser(data.user != undefined ? data.user.email : null);
-      }
-    };
-    getData();
-  }, []);
+  const [user, setUser] = useState<boolean | any>(null);
+  let ifLogin = false;
+  // useEffect(() => {
+  const getData = async () => {
+    const supabase = createClient();
+    const { data, error } = await supabase.auth.getUser();
+    if (error || !data?.user) {
+      setUser(false);
+    } else {
+      setUser(data.user != undefined ? data.user.email : null);
+      ifLogin = true;
+    }
+  };
+  getData();
+  // }, [isLogin]);
 
   return !path.includes("/studio") ? (
     <>
@@ -124,7 +125,7 @@ const Header = () => {
                   height={32}
                 ></Image>
               </Link>
-              {(isLogin || user) && (
+              {ifLogin || user ? (
                 <Link href={"/account"}>
                   <Image
                     src={"/icons/user.png"}
@@ -133,7 +134,10 @@ const Header = () => {
                     height={32}
                   ></Image>
                 </Link>
+              ) : (
+                <div></div>
               )}
+              {user === null ? <div className="w-[32px] h-[32px]"></div> : ""}
             </div>
           </div>
         </header>
