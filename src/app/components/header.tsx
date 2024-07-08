@@ -26,24 +26,24 @@ const navigation = [
     name: "Sign Up",
   },
 ];
+
 const Header = () => {
   const path = usePathname();
   const isLogin = useSelector((state: any) => state.login.logged);
   const [user, setUser] = useState<boolean | any>(null);
-  let ifLogin = false;
-  // useEffect(() => {
-  const getData = async () => {
-    const supabase = createClient();
-    const { data, error } = await supabase.auth.getUser();
-    if (error || !data?.user) {
-      setUser(false);
-    } else {
-      setUser(data.user != undefined ? data.user.email : null);
-      ifLogin = true;
-    }
-  };
-  getData();
-  // }, [isLogin]);
+  useEffect(() => {
+    const getData = async () => {
+      const supabase = createClient();
+      const { data, error } = await supabase.auth.getUser();
+      if (error || !data?.user) {
+        setUser(false);
+      } else {
+        setUser(data.user != undefined ? data.user.email : null);
+        setUser(true);
+      }
+    };
+    getData();
+  }, [isLogin]);
 
   return !path.includes("/studio") ? (
     <>
@@ -125,7 +125,7 @@ const Header = () => {
                   height={32}
                 ></Image>
               </Link>
-              {ifLogin || user ? (
+              {isLogin || user ? (
                 <Link href={"/account"}>
                   <Image
                     src={"/icons/user.png"}
@@ -135,7 +135,7 @@ const Header = () => {
                   ></Image>
                 </Link>
               ) : (
-                <div></div>
+                ""
               )}
               {user === null ? <div className="w-[32px] h-[32px]"></div> : ""}
             </div>

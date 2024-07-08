@@ -41,7 +41,6 @@ const Page = () => {
     const getData = async () => {
       const supabase = createClient();
       const { data, error } = await supabase.auth.getUser();
-      console.log(data, error);
       if (isLoggedIn === false && data?.user === null) {
         router.push("/");
       }
