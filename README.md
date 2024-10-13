@@ -6,6 +6,13 @@
 
 In this project, I was responsible for the front-end development, focusing on implementing the HTML and CSS to bring the design to life. While the design was sourced externally, I integrated it into the website, ensuring that the layout is clean and well-structured. The site is now ready for further development to include interactive features and e-commerce functionality.
 
+
+### Design Reference
+
+The design used in this project was sourced from a publicly available Figma file and does not belong to me. You can find the original design [here](https://www.figma.com/design/cd2Ky3B4QuD3oT887AYMsc/Full-E-Commerce-Website-UI-UX-Design-(Community)?node-id=34-213&node-type=frame&t=nfgh5RQxOHQPL1un-0).
+
+
+
 ## Features
 
 - **Visually Appealing Design**: A modern, clean, and premium design catered to desktop users.
