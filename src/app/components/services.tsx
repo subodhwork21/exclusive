@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Services = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto grid grid-cols-3 items-center justify-center flex-col px-[248px] gap-[45px] mb-[140px]">
+    <section className="max-w-[1440px] w-full mx-auto grid md:grid-cols-3 grid-cols-1 items-center justify-center flex-col lg:px-[248px] px-[30px] gap-[45px] mb-[140px]">
       <div className="flex justify-center items-center flex-col gap-[24px]">
         <Image
           src={"/icons/Services.png"}

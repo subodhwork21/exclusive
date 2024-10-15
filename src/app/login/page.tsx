@@ -45,10 +45,10 @@ const Page = () => {
   };
 
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col pr-[135px] pt-[60px] mb-[140px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col pr-[0px] pt-[60px] lg:pr-[135px] lg:px-[0px] mb-[140px]">
       <form
         onSubmit={(e) => submitUser(e)}
-        className="flex justify-center items-center gap-[129px]"
+        className="flex justify-center items-center md:flex-row flex-col gap-[129px]"
       >
         <Image
           src={"/images/loginimage.png"}

@@ -96,7 +96,7 @@ const WishItem = ({
             )}
           </div>
           {inline === true ? (
-            <div className="flex justify-left items-center gap-[6px]">
+            <div className="flex justify-left items-center flex-row lg:flex-col gap-[6px]">
               {Array.from({ length: ratings }, (_, i) => {
                 return (
                   <Image

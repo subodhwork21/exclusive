@@ -3,13 +3,13 @@ import Button from "./button";
 
 const BigBanner = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto  px-[135px] gap-[45px] mb-[71px] ">
-      <div className="bg-blackprimary w-full flex justify-between items-center gap-[43px]">
-        <div className="pt-[69px] pl-[56px] pb-[69px]">
+    <section className="max-w-[1440px] w-full mx-auto  lg:px-[135px] px-[30px] gap-[45px] mb-[71px] ">
+      <div className="bg-blackprimary w-full flex flex-col lg:flex-row justify-between items-center gap-[43px] pt-[40px]">
+        <div className="lg:pt-[69px] lg:pl-[56px] lg:pb-[69px] pt-[0px] pl-[0px] pb-[0px]">
           <p className="mb-8 text-[16px] text-greensecondary font-poppinssemibold">
             Categories
           </p>
-          <h1 className=" font-semibold w-[443px] mb-8">
+          <h1 className=" font-semibold lg:w-[443px] w-[200px] mb-8 text-[24px]">
             Enhance Your Music Experience
           </h1>
           <div className="flex justify-left items-center gap-6 mb-10">

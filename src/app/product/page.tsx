@@ -5,7 +5,7 @@ import ProductItem from "../components/productItem";
 
 const Page = () => {
   return (
-    <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-start flex-col px-[135px] mb-[140px]">
+    <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-stretch flex-col lg:px-[135px] px-[20px] mb-[140px]">
       <p className="text-[14px] text-left mb-20 w-full text-gray-400">
         <span className="text-gray-400">
           <Link href={"/"}>Account </Link>
@@ -19,8 +19,8 @@ const Page = () => {
           <Link href={"/cart"}>Havic HV G-92 Gamepad </Link>
         </span>
       </p>
-      <div className="flex justify-between items-start mb-[140px]">
-        <div className="flex justify-start items-start flex-col mr-[30px]">
+      <div className="flex justify-between lg:flex-row flex-col items-start mb-[140px]">
+        <div className="justify-start items-start flex-col mr-[30px] lg:flex hidden">
           <Image
             className="mb-4"
             src={"/images/controller1.png"}
@@ -59,7 +59,7 @@ const Page = () => {
             height={600}
           ></Image>
         </div>
-        <div className="w-[400px]">
+        <div className="lg:w-[400px] w-[370px]">
           <p className="font-interbold text-[24px] font-semibold">
             Havic HV G-92 Gamepad
           </p>
@@ -227,7 +227,7 @@ const Page = () => {
           Related Item
         </div>
       </div>
-      <div className="grid grid-cols-4 items-center justify-center gap-[30px]">
+      <div className="grid md:grid-cols-4 grid-cols-1 items-center justify-center gap-[30px]">
         <ProductItem
           image={"/images/chocolate.png"}
           pname={"Breed Dry Dog Food"}

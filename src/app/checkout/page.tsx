@@ -3,7 +3,7 @@ import Link from "next/link";
 import Button from "../components/button";
 const Page = () => {
   return (
-    <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col px-[135px] mb-[140px]">
+    <section className="pt-20 max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col lg:px-[135px] px-[30px] mb-[140px]">
       <p className="text-[14px] text-left mb-20 w-full">
         <span className="text-gray-400">
           <Link href={"/"}>Home</Link>
@@ -26,44 +26,44 @@ const Page = () => {
         </span>
       </p>
       <h2 className="text-left w-full mb-12">Billing Details</h2>
-      <div className="flex justify-between items-start w-full">
+      <div className="flex justify-between items-start xl:flex-row flex-col w-full">
         <div className="flex justify-start items-start w-1/2 flex-col">
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">First Name*</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Company Name</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Street Address*</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Apartment, floor, etc. (optional)</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Town/City*</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Phone Number*</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
           <div className="text-gray-400 text-[16px] mb-8">
             <p className="mb-2">Email Address*</p>
-            <input type="text" className="bg-gray-200 p-3 w-[470px]" />
+            <input type="text" className="bg-gray-200 p-3 lg:w-[470px] w-[350px]" />
           </div>
-          <div>
+          <div className="flex justify-center items-left w-full">
             <input type="checkbox" className="w-6 h-6" />
-            <span className="inline-block align-top ml-4">
+            <span className="lg:inline-block block align-top ml-4">
               Save this information for faster check-out next time
             </span>
           </div>
         </div>
-        <div className="mt-[47px] w-1/2 pr-[102px]">
+        <div className="mt-[47px] lg:w-1/2 w-full lg:pr-[102px] px-[30px]">
           <div className="flex justify-between items-center mb-10">
             <div className="flex justify-center items-center gap-6">
               <Image

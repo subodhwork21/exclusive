@@ -30,12 +30,12 @@ const Page = () => {
   };
 
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col pr-[135px] pt-[60px] mb-[140px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col lg:pr-[135px] pr-[0px] pt-[60px] lg:px-[0px] mb-[140px]">
       <form
         onSubmit={(e) => {
           submitSignup(e);
         }}
-        className="flex justify-center items-center gap-[129px]"
+        className="flex justify-center items-center gap-[129px] md:flex-row flex-col"
       >
         <Image
           src={"/images/loginimage.png"}

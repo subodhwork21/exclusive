@@ -7,7 +7,7 @@ const Footer = () => {
 
   return !path.includes("/studio") ? (
     <>
-      <div className="max-w-[1440px] w-full mx-auto bg-blackprimary px-[135px] pt-[80px] flex justify-between items-start pb-[60px]">
+      <div className="max-w-[1440px] w-full mx-auto bg-blackprimary md:px-[135px] px-[30px] pt-[80px] flex justify-between lg:flex-row flex-col lg:gap-[0px] gap-[40px] lg:items-start items-start pb-[60px]">
         <div>
           <p className="text-[24px] mb-6 text-white font-interbold font-bold">
             Exclusive

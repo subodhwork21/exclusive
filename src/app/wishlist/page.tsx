@@ -5,12 +5,12 @@ import WishItem from "./wish_item";
 
 const Page = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col px-[135px] pt-[80px] mb-[80px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-start items-center flex-col lg:px-[135px] px-[30px] pt-[80px] mb-[80px]">
       <div className="w-full flex justify-between items-center mb-[60px]">
         <p className="text-[20px]">Wishlist (4)</p>
         <Button name="Move All To Bag" bgcolor="bg-white" />
       </div>
-      <div className="grid grid-cols-4 gap-[30px] mb-[28px]">
+      <div className="grid lg:grid-cols-4 grid-cols-1 gap-[30px] mb-[28px]">
         <WishItem
           image={"/images/bag.png"}
           pname={"Gucci duffle bag"}
@@ -76,7 +76,7 @@ const Page = () => {
           <Button name="See All" bgcolor="bg-white" />
         </div>
       </div>
-      <div className="grid grid-cols-4 gap-[30px]">
+      <div className="grid lg:grid-cols-4 grid-cols-1 gap-[30px]">
         <WishItem
           image={"/images/laptop.png"}
           pname={"ASUS FHD Gaming Laptop"}

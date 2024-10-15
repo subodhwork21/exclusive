@@ -29,7 +29,7 @@ const SalesSection = () => {
     }, 1000);
   }, [seconds, time1]);
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col px-[135px] gap-[45px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col md:px-[135px] px-[30px] gap-[45px]">
       <div className="flex justify-left items-start flex-col gap-[20px]">
         <div className="flex justify-start items-center gap-[10px]">
           <div className="w-[20px] h-[40px] bg-redsecondary"></div>
@@ -38,8 +38,8 @@ const SalesSection = () => {
           </div>
         </div>
         <div className="w-full flex justify-between items-center mb-[31px]">
-          <div className="flex justify-between items-end w-[600px]">
-            <p className="font-interbold text-[36px] font-semibold">
+          <div className="flex justify-between lg:items-end items-start w-[600px] lg:flex-row flex-col">
+            <p className="font-interbold md:text-[36px] text-[20px] font-semibold mb-8">
               Flash Sales
             </p>
             <div className="flex justify-center items-center gap-[17px] ">
@@ -97,7 +97,7 @@ const SalesSection = () => {
             </div>
           </div>
 
-          <div className="flex justify-end items-start gap-[8px]">
+          <div className="md:flex justify-end items-start gap-[8px] hidden">
             <div className="w-[46px] h-[46px] bg-graysecondary flex justify-center items-center rounded-full">
               <Image
                 src={"/icons/arrow-left.png"}
@@ -117,7 +117,7 @@ const SalesSection = () => {
           </div>
         </div>
       </div>
-      <div className="flex justify-start items-center gap-[30px] mb-[15px]">
+      <div className="md:flex justify-start items-center gap-[30px] mb-[15px] hidden">
         <Swiper
           className=""
           spaceBetween={30}
@@ -190,6 +190,82 @@ const SalesSection = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+
+
+      <div className="flex justify-start items-center gap-[30px] mb-[15px] md:hidden">
+        <Swiper
+          className=""
+          spaceBetween={30}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          modules={[Autoplay]}
+
+          //   onSlideChange={() => console.log("slide change")}
+          //   onSwiper={(swiper) => console.log(swiper)}
+        >
+          <SwiperSlide>
+            <ProductItem
+              image={"/images/itemgamepad.png"}
+              pname={"HAVIT HV-G92 Gamepad"}
+              pricebefore={"$160"}
+              priceafter={"$120"}
+              ratings={5}
+              totalrating={88}
+              discount={40}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductItem
+              image={"/images/keyboard.png"}
+              pname={"AK-900 Wired Keyboard"}
+              pricebefore={"$1160"}
+              priceafter={"$960"}
+              ratings={4}
+              totalrating={75}
+              discount={35}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <ProductItem
+              image={"/images/monitor.png"}
+              pname={"IPS LCD Gaming Monitor"}
+              pricebefore={"$400"}
+              priceafter={"$370"}
+              ratings={5}
+              totalrating={99}
+              discount={30}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <ProductItem
+              image={"/images/chair.png"}
+              pname={"S-Series Comfort Chair "}
+              pricebefore={"$400"}
+              priceafter={"$375"}
+              ratings={4.5}
+              totalrating={99}
+              discount={30}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            {" "}
+            <ProductItem
+              image={"/images/chair.png"}
+              pname={"S-Series Comfort Chair "}
+              pricebefore={"$400"}
+              priceafter={"$375"}
+              ratings={4.5}
+              totalrating={99}
+              discount={30}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
       <div className="flex justify-center items-center mb-[60px]">
         <Button name={"View All Products"} bgcolor={"bg-redsecondary"} />
       </div>

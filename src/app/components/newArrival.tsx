@@ -1,7 +1,7 @@
 import Image from "next/image";
 const NewArrival = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col px-[135px] gap-[45px] mb-[140px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col lg:px-[135px] gap-[45px] mb-[140px] px-[30px]">
       <div className="flex justify-left items-start flex-col gap-[20px]">
         <div className="flex justify-start items-center gap-[10px]">
           <div className="w-[20px] h-[40px] bg-redsecondary"></div>
@@ -17,7 +17,7 @@ const NewArrival = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-[30px]">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-[30px]">
         <div className="flex justify-center items-center px-[30px] pt-[90px] bg-blackprimary">
           <div className="relative">
             <Image
@@ -61,7 +61,7 @@ const NewArrival = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-[30px]">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
             <div className="w-full relative col-span-1 bg-black flex justify-center items-center p-[30px]">
               <Image
                 src={"/images/speakers.png"}

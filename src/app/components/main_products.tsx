@@ -7,7 +7,7 @@ import ProductItem from "./productItem";
 
 const MainProducts = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col px-[135px] gap-[45px] mb-[140px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col md:px-[135px] px-[30px] gap-[45px] mb-[140px]">
       <div className="flex justify-left items-start flex-col gap-[20px]">
         <div className="flex justify-start     items-center gap-[10px]">
           <div className="w-[20px] h-[40px] bg-redsecondary"></div>
@@ -17,11 +17,11 @@ const MainProducts = () => {
         </div>
         <div className="w-full flex justify-between items-center mb-[15px]">
           <div className="flex justify-between items-end w-[600px]">
-            <p className="font-interbold text-[36px] font-semibold">
+            <p className="font-interbold lg:text-[36px] text-[20px] font-semibold">
               Explore Our Products
             </p>
           </div>
-          <div className="flex justify-end items-start gap-[8px]">
+          <div className="lg:flex justify-end items-start gap-[8px] hidden">
             <div className="w-[46px] h-[46px] bg-graysecondary flex justify-center items-center rounded-full">
               <Image
                 src={"/icons/arrow-left.png"}
@@ -41,7 +41,7 @@ const MainProducts = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-4 items-center justify-center gap-[30px]">
+      <div className="grid lg:grid-cols-4 grid-cols-1 items-center justify-center gap-[30px]">
         <ProductItem
           image={"/images/chocolate.png"}
           pname={"Breed Dry Dog Food"}
@@ -83,7 +83,7 @@ const MainProducts = () => {
           inline={true}
         />{" "}
       </div>
-      <div className="grid grid-cols-4 items-center justify-center gap-[30px] mt-[15px]">
+      <div className="grid lg:grid-cols-4 grid-cols-1 items-center justify-center gap-[30px] mt-[15px]">
         <ProductItem
           image={"/images/car.png"}
           pname={"Kids Electric Car"}

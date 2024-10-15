@@ -3,7 +3,7 @@ import CategoryIcon from "./category_icon";
 
 const AllCategory = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col px-[135px] gap-[45px] mb-[70px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-left flex-col px-[30px] md:px-[135px] gap-[45px] mb-[70px]">
       <div className="flex justify-start     items-center gap-[10px]">
         <div className="w-[20px] h-[40px] bg-redsecondary"></div>
         <div className="text-redsecondary font-poppinssemibold text-[16px]">
@@ -12,7 +12,7 @@ const AllCategory = () => {
       </div>
       <div className="w-full flex justify-between items-center mb-[15px]">
         <div className="flex justify-between items-end w-[600px]">
-          <p className="font-interbold text-[36px] font-semibold">
+          <p className="font-interbold md:text-[36px] text-[20px] font-semibold ">
             Browse By Category
           </p>
         </div>
@@ -36,7 +36,7 @@ const AllCategory = () => {
         </div>
       </div>
       {/* category icons */}
-      <div className="grid grid-cols-6 gap-[30px]">
+      <div className="grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-[30px]">
         <CategoryIcon icon={"/icons/cellphone.svg"} name="Phones" />
         <CategoryIcon icon={"/icons/computer.svg"} name="Computers" />
         <CategoryIcon icon={"/icons/smartwatch.svg"} name="SmartWatch" />

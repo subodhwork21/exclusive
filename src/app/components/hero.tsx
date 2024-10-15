@@ -1,8 +1,8 @@
 import Image from "next/image";
 const HeroSection = () => {
   return (
-    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-center px-[135px] gap-[45px] mb-[140px]">
-      <ul className="flex w-[217px] justify-center items-start flex-col gap-4 text-[16px] pr-4 border-r-2 mt-[40px]">
+    <section className="max-w-[1440px] w-full mx-auto flex justify-between items-center md:px-[135px] px-[30px] gap-[45px] mb-[100px] md:mb-[140px]">
+      <ul className="hidden w-[217px] xl:flex  justify-center items-start flex-col gap-4 text-[16px] pr-4 border-r-2 mt-[40px]">
         <li className="flex w-full justify-between items-center ">
           <p>Woman’s Fashion</p>
           <span className="block">
@@ -33,9 +33,9 @@ const HeroSection = () => {
         <li>Groceries & Pets</li>
         <li>Health & Beauty</li>
       </ul>
-      <div className="bg-blackprimary w-[892px] h-[344px] flex justify-between items-start flex-col relative mt-[40px]">
+      <div className="bg-blackprimary lg:w-[892px] w-full h-[344px] flex justify-between items-start flex-col relative mt-[40px] " > 
         {/* <div></div> */}
-        <div className="w-[892px] flex justify-between items-start">
+        <div className="w-[892px] flex justify-between items-start lg:flex-row flex-col">
           <div className="pt-[58px] pl-[64px] flex flex-col justify-center items-start w-[300px]">
             <div className="flex justify-center items-center gap-6 mb-[20px]">
               <Image
@@ -61,16 +61,17 @@ const HeroSection = () => {
               </span>
             </p>
           </div>
-          <div className="pt-[16px]">
+          <div className="pt-[16px] lg:block hidden">
             <Image
               src={"/icons/heromobile.png"}
-              width={496}
+              width={659}
               height={352}
+              className="md:w-auto w-[659px]"
               alt="mobile"
             ></Image>
           </div>
         </div>
-        <div className="w-full flex justify-center items-center absolute bottom-[11px]">
+        <div className="w-full justify-center items-center absolute bottom-[11px] lg:flex hidden ">
           <div className="flex justify-center items-center gap-3">
             <p className="w-3 h-3 rounded-full bg-graysecondary"></p>
             <p className="w-3 h-3 rounded-full bg-graysecondary"></p>

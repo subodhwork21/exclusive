@@ -10,7 +10,7 @@ interface cartProps {
 
 const CartItem = ({ name, image, price, subtotal, quantity }: cartProps) => {
   return (
-    <div className="px-10 py-6 text-[16px] grid grid-cols-4 justify-between items-center w-full shadow-cart group">
+    <div className="lg:px-10 px-0 py-6 lg:gap-0 gap-8 text-[16px] grid lg:grid-cols-4 grid-cols-1 justify-between items-center w-full shadow-cart group">
       <div className="flex justify-left items-center gap-[22px] relative">
         <Image src={image} width={50} height={39} alt="monitor"></Image>
         <p className="text-[16px]">{name}</p>
@@ -22,8 +22,8 @@ const CartItem = ({ name, image, price, subtotal, quantity }: cartProps) => {
           height={24}
         ></Image>
       </div>
-      <p className="text-[16px] text-center">${price}</p>
-      <div className="flex justify-center items-center text-center">
+      <p className="text-[16px] lg:text-center text-left">${price}</p>
+      <div className="flex lg:justify-center justify-start items-center">
         <input
           value={quantity}
           type="number"
@@ -32,7 +32,7 @@ const CartItem = ({ name, image, price, subtotal, quantity }: cartProps) => {
         />
       </div>
 
-      <p className="text-[16px] text-right">${subtotal}</p>
+      <p className="text-[16px] lg:text-right text-left">${subtotal}</p>
     </div>
   );
 };

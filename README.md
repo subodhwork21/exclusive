@@ -1,113 +1,128 @@
+# Exclusive - Next.js 14 Project with Tailwind CSS
 
-# Exclusive
+Exclusive is an e-commerce website designed for desktop users, featuring a visually appealing design focused on delivering a premium shopping experience. This project showcases my front-end development skills using **Next.js 14** and **Tailwind CSS**. The design was sourced from a free Figma template and the site is deployed on **Vercel**.
 
+## Table of Contents
 
-1. Features
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Project Structure](#project-structure)
 
+## Features
 
-- **Visually Appealing Design**: A modern, clean, and premium design catered to desktop users.
-- **Responsive Layout**: The layout and styling are fully responsive for various screen sizes.
-- **Future-Ready**: The platform is set up for further development, where interactive and functional e-commerce features can be integrated.
-
-
-2. Technologies
-
-
-- **Next.js**: For server-side rendering and optimized performance.
-- **HTML**: For structuring the layout of the site.
-- **Tailwind CSS**: For styling and responsive design, ensuring a visually appealing and modern look.
-
-
-
-
-3. Prerequisites
-
-- **Node.js** and **npm** (optional if integrating more advanced features in the future).
+- **Next.js 14** app router for dynamic routing and server-side rendering
+- **Tailwind CSS** for modern and responsive styling
+- Design sourced from a **free Figma UI/UX template**: [Template link](https://www.figma.com/design/cd2Ky3B4QuD3oT887AYMsc/Full-E-Commerce-Website-UI-UX-Design-(Community)?node-id=178-3781&node-type=frame&t=iVnQfuswfMl7613s-0)
+- Deployed on **Vercel** for easy and fast hosting
 
 
-4. Installation
+## Tech Stack
+
+- [Next.js 14](https://nextjs.org/) - The React framework for production-grade web applications
+- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for modern web styling
+- [Vercel](https://vercel.com/) - A platform for deploying frontend frameworks and static sites
 
 
-1. Clone the repository:
 
+## Installation
+
+To run the project locally, follow these steps:
+
+1. **Clone the repository**:
    ```bash
-   git clone https://exclusive-gamma.vercel.app
+   git clone https://github.com/subodhwork21/exclusive
 
 
-2. Navigate to the project directory:
-    cd exclusive
+2. **Navigate into the project directory**:
+   ```bash
+   cd exclusive
 
+3. **Install dependencies**:
 
-3. If planning to add advanced features or Next.js, install dependencies:
     npm install
 
-4. Start the development server (if using Next.js or another framework):
+4. Run the development server:
+
     npm run dev
 
-5. View the site at http://localhost:3000
+    Open [http://localhost:3000](http://localhost:3000) in your browser to see the app.
+
+> **Note**: No `.env` file is required for this project.
+
+## Usage
+
+This project demonstrates the use of **Next.js 14 with the app router** and **Tailwind CSS** for styling. The code is organized into a clear folder structure that follows Next.js best practices.
 
 
-5. Running the Project
+### Key Directories:
 
-Start the development server (if using Next.js or another framework):
-    npm run dev
+- **`src/app/`**: Contains all pages, layouts, and route logic using Next.js' app router.
+- **`src/components/`**: Houses reusable UI components that are shared across different pages.
+- **`src/lib/`**: Contains utility functions and shared logic that can be used in various parts of the project.
+- **`public/`**: Stores static assets such as images, icons, and other public resources.
+
+### Running the Project:
 
 
-6. Deployment
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/your-username/your-repo-name.git
+   ```
+
+2. **Navigate into the project directory**:
+   ```bash
+   cd your-repo-name
+   ```
+
+3. **Install the dependencies**:
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server**:
+   ```bash
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) in your browser to see the app running.
+
+The project uses **Next.js' app router** to handle routing and server-side rendering, ensuring optimal performance and SEO. Tailwind CSS is used for building responsive and customizable UI components.
 
 ## Deployment
 
-To deploy the **Velvety** project, follow these steps:
+This project is deployed on Vercel and can be accessed at:  
+[https://exclusive-gamma.vercel.app/](https://exclusive-gamma.vercel.app/)
 
-### Vercel Deployment (Recommended)
+To deploy your own version:
 
-1. **Push your code to GitHub**:
-   - Ensure your project is pushed to a GitHub repository.
-
-2. **Create an account on [Vercel](https://vercel.com/)**:
-   - If you don't already have one, sign up for a free account on Vercel.
-
-3. **Import your project**:
-   - Go to your Vercel dashboard and click **"New Project"**.
-   - Select **"Import Git Repository"** and choose your GitHub repository for Velvety.
-
-4. **Configure build settings**:
-   - Vercel will automatically detect that your project is using **Next.js**.
-   - No special configurations are needed if you're using the default settings.
-
-5. **Deploy your project**:
-   - Click **"Deploy"** and wait for the build to complete.
-   - Once it's done, your project will be live on a Vercel-generated URL.
-
-6. **Custom Domain**:
-   - If you want to use a custom domain, you can add it in the **"Domains"** section of your Vercel project dashboard.
-
-### Manual Deployment
-
-If you prefer to deploy the site manually to a server:
-
-1. **Build the project**:
-
+1. **Push to GitHub or any Git provider**.
+2. **Connect your repository to Vercel** (or use the Vercel CLI):
    ```bash
-   npm run build
+   vercel
+   ```
+3. Vercel will automatically build and deploy your project.
 
+## Project Structure
 
-7. File Structure
+```bash
+.
+├── public/               # Public assets (images, fonts, etc.)
+├── src/                  # Source files
+│   ├── app/              # Next.js app router directory for pages and layout
+│   ├── components/       # Reusable UI components
+│   └── lib/              # Utility functions, helpers, and libraries
+├── styles/               # Global CSS and Tailwind configuration
+├── package.json          # Project dependencies and scripts
+└── README.md             # Project documentation
+```
 
+- **public/**: Contains all static assets such as images and fonts.
+- **src/**: Contains the main source code for the project.
+  - **app/**: This folder follows Next.js 14's app router architecture, containing pages, layout, and routing logic.
+  - **components/**: Houses reusable UI components to maintain modularity.
+  - **lib/**: Includes utility functions and helper code that is shared across the project.
+- **styles/**: Contains global styles and Tailwind CSS configuration.
 
-
-### Main Folders and Files:
-
-- **src/**: Contains the main source code for the project, with subdirectories for different modules like `app/`, `components/`, and `styles/`.
-- **app/**: Holds the various pages and components related to the app, such as `about`, `auth`, `cart`, and more.
-- **components/**: Contains reusable components that are shared across the application.
-- **lib/**: Contains helper functions or libraries used in the project.
-- **redux/**: Manages the application's state using Redux.
-- **utils/**: Utility functions used throughout the project.
-- **public/**: Holds static assets like images and the favicon.
-
-### Key Files:
-- **middleware.ts**: Contains custom middleware functionality.
-- **page.tsx**: The main page component of the application.
-- **globals.css**: Global CSS file for styling the application.
-- **favicon.ico**: The favicon for the website.
