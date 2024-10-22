@@ -15,9 +15,9 @@ export default function Home() {
     <>
       <HeroSection />
       <SalesSection />
-      <hr className="mb-[60px] w-[1170px] mx-auto" />
+      <hr className="mb-[60px] w-full mx-auto" />
       <AllCategory />
-      <hr className="mb-[70px] w-[1170px] mx-auto" />
+      <hr className="mb-[70px] w-full mx-auto" />
       <BestSales />
       <BigBanner />
       <MainProducts />

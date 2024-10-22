@@ -35,7 +35,7 @@ const HeroSection = () => {
       </ul>
       <div className="bg-blackprimary lg:w-[892px] w-full h-[344px] flex justify-between items-start flex-col relative mt-[40px] " > 
         {/* <div></div> */}
-        <div className="w-[892px] flex justify-between items-start lg:flex-row flex-col">
+        <div className="lg:w-[892px] w-full flex justify-between items-start lg:flex-row flex-col">
           <div className="pt-[58px] pl-[64px] flex flex-col justify-center items-start w-[300px]">
             <div className="flex justify-center items-center gap-6 mb-[20px]">
               <Image
